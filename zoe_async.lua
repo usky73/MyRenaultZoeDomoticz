@@ -219,16 +219,16 @@ return {
 			os.execute("python3 '"..scriptPython.."' '"..credentials.."' 'ACstop' &")
 		elseif(item.name == chargeMode and item.bState == true)then
 			domoticz.log("Planning de charge activé",domoticz.LOG_DEBUG)
-			os.execute(scriptPython..' '..credentials..' "chargeSchedule" "'..planningActive..'" &')
+			os.execute("python3 '"..scriptPython..' '..credentials..' "chargeSchedule" "'..planningActive..'" &')
 		elseif(item.name == chargeMode and item.bState == false)then
 			domoticz.log("Planning de charge désactivé",domoticz.LOG_DEBUG)
-			os.execute(scriptPython..' '..credentials..' "chargeSchedule" "'..planningDesactive..'" &')
+			os.execute("python3 '"..scriptPython..' '..credentials..' "chargeSchedule" "'..planningDesactive..'" &')
 		elseif(item.name == chargeDisable and item.bState == true)then
 			domoticz.log("Charge désactivée",domoticz.LOG_DEBUG)
-			os.execute(scriptPython..' '..credentials..' "chargeSchedule" "'..planningChargeDesactive..'" &')
+			os.execute("python3 '"..scriptPython..' '..credentials..' "chargeSchedule" "'..planningChargeDesactive..'" &')
 		elseif(item.name == chargeDisable and item.bState == false)then
 			domoticz.log("Planning de charge activé",domoticz.LOG_DEBUG)
-			os.execute(scriptPython..' '..credentials..' "chargeSchedule" "'..planningActive..'" &')
+			os.execute("python3 '"..scriptPython..' '..credentials..' "chargeSchedule" "'..planningActive..'" &')
 		
 		elseif(item.isTimer) then
 			if domoticz.data.batterieTimestamp == nil then
